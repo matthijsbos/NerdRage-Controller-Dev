@@ -10,5 +10,6 @@ RUN apt-get update \
    && apt-get clean -y \
    && rm -rf /var/lib/apt/lists/*
 RUN pip3 install -U platformio
+RUN platformio platform install --with-package framework-arduinoespressif32 espressif32
 ENV DEBIAN_FRONTEND=dialog
 
