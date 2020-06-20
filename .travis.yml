@@ -4,10 +4,10 @@ services:
   - docker
 
 script:
-  - docker build -t matthijsbos/nerdrage-controller-dev .
+  - docker build -t matthijsbos/nerdrage-controller-dev:latest .
   # test installed commands
-  - docker run --rm matthijsbos/nerdrage-controller-dev platformio --version
+  - docker run --rm matthijsbos/nerdrage-controller-dev:latest platformio --version
 
 after_success:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-  - docker push matthijsbos/nerdrage-controller-dev
+  - docker push matthijsbos/nerdrage-controller-dev:latest
