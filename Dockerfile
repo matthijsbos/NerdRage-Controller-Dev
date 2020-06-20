@@ -4,7 +4,7 @@ ENV DEBIAN_FRONTEND=noninteractive
 RUN apt-get update \
    && apt-get -y upgrade \
    && apt-get -y install \
-         build-essentials \
+         build-essential \
    # Clean up
    && apt-get autoremove -y \
    && apt-get clean -y \
